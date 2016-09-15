@@ -1,6 +1,16 @@
 <h1>Hiiii</h1>
 <div>
-    <input type="text" ng-model="$ctrl.serapi" />
+    <input type="text" placeholder="URL" ng-model="$ctrl.serapi" />
+</div>
+<div ng-repeat="x in $ctrl.param">
+    <input type="text" placeholder="key" ng-model="x.key" />
+    <input type="text" placeholder="value" ng-model="x.value" />
+</div>
+<div>
+    <button type="submit" ng-click="$ctrl.addParam()">Add</button>
+</div>
+<div>
+    {{ $ctrl.param }}
 </div>
 <div>
     <select ng-options="x for x in $ctrl.apimeth" ng-model="$ctrl.sapimeth">

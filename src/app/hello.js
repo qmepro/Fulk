@@ -5,23 +5,33 @@ export class UserComponent {
     this.apimeth = ["GET", "POST"];
     this.serapi = '';
     this.sapimeth = '';
+    this.param = [];
+    this.temp = [];
+  }
+
+  addParam() {
+    this.param.push({});
   }
 
   serres() {
+    angular.forEach(this.param, key => {
+      this.temp.push(key.key + '=' + key.value);
+      console.log(key);
+    });
+    console.log(this.temp);
+    this.temp2 = this.temp.join('&');
+    console.log(this.temp2);
+
     this.request = {
-      method: this.sapimeth,
-      url: this.serapi
+      methode: this.sapimeth,
+      url: this.serapi + '?' + this.temp2
+      // param: this.temp2
     };
-    // $log(this.sapimeth);
-    // $log(this.serapi);
+    console.log(this.request);
     this.$http(this.request)
     .then(response => {
-      this.data = response.data;
-    // $log(this.data);
-    })
-    .catch(response => {
-      this.data = response.data;
-      // $log(this.data);
+      this.data = response;
+      console.log(this.data);
     });
   }
   data() {
