@@ -2,7 +2,7 @@ export class UserComponent {
   constructor($http) {
     this.$http = $http;
     this.hello = "Hello World!";
-    this.apimeth = ["GET", "POST"];
+    this.apimeth = ["GET", "POST", "PUT", "DELETE"];
     this.serapi = '';
     this.sapimeth = '';
     this.param = [];

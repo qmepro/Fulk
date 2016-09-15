@@ -1,0 +1,15 @@
+{
+  "manifest_version": 2,
+  "name"            : "FULK",
+  "description"     : "FULK",
+  "short_name"      : "FULK",
+  "version"         : "0.1",
+  "browser_action": {
+    "default_popup": "index.html"
+  },
+  "permissions": [
+    "debugger"
+  ]
+}
+  
+
